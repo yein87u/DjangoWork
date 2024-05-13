@@ -21,6 +21,6 @@ from . import views
 urlpatterns = [
     path("", view=views.home, name="index"),
     path("getdata/", views.get),
-    path("GDE/", views.Get_data_Example),
-    re_path("GDE/$", views.Get_data_Example),
+    path("GDE/", views.search),
+    re_path("GDE/$", views.search),
 ]

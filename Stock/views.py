@@ -7,7 +7,31 @@ import twstock
 
 
 def home(request):
-    return render(request, "index.html")
+
+    try:
+        # 變數 = 資料庫名稱.方法(條件)   .first()是指符合條件的第一筆  #還有其他拿資料的方法
+        Stock_Symbol = request.GET.get("stock_symbol")
+        unit = stock_data.objects.filter(
+            stock_symbol=Stock_Symbol
+        ).last()  # 讀取一筆資料
+
+        # 打包到字典
+        data_dict = {
+            "1_1": "2330",
+            "1_2": "2317",
+            "1_3": "2454",
+            "1_4": "1301",
+            "1_5": "1303",
+            "2_1": "2412",
+            "2_2": "2308",
+            "2_3": "2881",
+            "2_4": "2891",
+            "2_5": "2892",
+        }
+    except:
+        print("Error")
+
+    return render(request, "index.html", {"Data": data_dict})
 
 
 def get(request):
@@ -47,34 +71,18 @@ def get(request):
     return HttpResponse("資料已成功存入資料庫")
 
 
-def Get_data_Example(request):
+def search(request):
 
     # 強烈建議了解資料庫內部結構後再進行操作，例如下載DB.Browser可查看資料庫內容
     try:
         # 變數 = 資料庫名稱.方法(條件)   .first()是指符合條件的第一筆  #還有其他拿資料的方法
-        first = stock_data.objects.filter(stock_symbol="2330").first()
-        Second = stock_data.objects.filter(stock_symbol="2317").first()
-        Third = stock_data.objects.filter(stock_symbol="2454").first()
-
         Stock_Symbol = request.GET.get("stock_symbol")
         unit = stock_data.objects.filter(
             stock_symbol=Stock_Symbol
-        ).first()  # 讀取一筆資料
+        ).last()  # 讀取一筆資料
 
         # 打包到字典
         data_dict = {
-            "2330_1": first.stock_symbol,
-            "2330_2": first.high_price,
-            "2330_3": first.low_price,
-            "2330_4": first.change_price,
-            "2317_1": Second.stock_symbol,
-            "2317_2": Second.high_price,
-            "2317_3": Second.low_price,
-            "2317_4": Second.change_price,
-            "2454_1": Third.stock_symbol,
-            "2454_2": Third.high_price,
-            "2454_3": Third.low_price,
-            "2454_4": Third.change_price,
             "col1": unit.stock_symbol,
             "col2": unit.high_price,
             "col3": unit.low_price,
