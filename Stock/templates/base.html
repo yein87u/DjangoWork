@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <title>股票查詢系統</title>
+    <meta charser="UTF-8">
+</head>
+
+<body>
+    <div class="base">
+        <h1>股票查詢系統</h1>
+
+        <form method="GET" action="GDE/">
+            <label for="name">Enter stock number:</label>
+            <input type="text" id="stock_symbol" name="stock_symbol">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+
+    <h3>成員</h3>
+    <ul>
+        <li>B1043051 張嘉翔</li>
+        <li>B1043040 戴佑丞</li>
+        <li>B1031059 官振新</li>
+        <li>B1143016 吳享恩</li>
+        <li>B1143018 王政翔</li>
+    </ul>
+
+    {% block mainBody %}
+    {% endblock mainBody %}
+</body>
+
+</html>
