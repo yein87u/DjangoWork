@@ -25,24 +25,24 @@ body{
     justify-content: space-between;
     align-items: center;    
     margin: 0 auto;
+    
 }
 
 
 .header p{
     transition:  500ms;
-    width: 300px;
     margin: 0;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 2.4em;
     color: white;
-    
+    font-weight:bold
 }
 .header.transparent p{
     color: rgb(54, 23, 82);
     transition:  500ms;
 }
+
 .header .content a {
-   
     height: 40px;
     text-align: center;
     transition:  500ms;
@@ -64,7 +64,23 @@ body{
     border: 2px solid rgb(54, 23, 82);
     
 }
-
+@media (max-width: 768px) {
+    .header.transparent a {
+        display: none;
+    }
+    .header .content a{
+        display: none;
+    }
+}
+@media (max-width: 400px) {
+    .header p{
+        display: none;
+    }
+    .header.transparent p{
+        display: none;
+    }
+    
+}
 .header a:hover{
     transform: scale(1.1);
     transition:  500ms;
