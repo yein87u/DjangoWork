@@ -20,7 +20,7 @@ from . import views
 
 urlpatterns = [
     path("", view=views.home, name="index"),
-    path("getdata/", views.get , name="getdata"),
+    path("renew/", views.get , name="getdata"),
     path("GS/", views.search , name="search"),
     re_path("GS/$", views.search , name="search"),
 ]

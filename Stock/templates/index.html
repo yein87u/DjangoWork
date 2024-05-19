@@ -9,8 +9,9 @@
 {% block mainBody %}
 
 <div class="Search" >
+    <h1>股票查詢系統</h1>
     <form class="Search_box" method="GET" action="GS/">
-        <input type="text" id="stock_symbol" name="stock_symbol">
+        <input type="text" id="stock_symbol" name="stock_symbol" placeholder="請輸入股票代號">
         <button type="submit">Search</button>
     </form>
     <div class="slider">
@@ -27,7 +28,7 @@
 </div>  
 <div class="center_col">
     <div class="stock_title">
-        <h2>股票總覽</h2>
+        <h2>股票總覽<button type="button" class="btn btn_renew">更新</button></h2>
     </div>
     <div class="stock_list">
 
@@ -45,7 +46,7 @@
         {% endfor %}
     </div>
     <div class="stock_title">
-        <h2>製作成員 第六組</h2>
+        <h2>第六組 製作成員 </h2>
     </div>
     <ul class="member_list">
         <li>B1043051 張嘉翔 負責圖表網頁</li>
@@ -58,5 +59,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"></script>
 <script src="{%static 'js/slick.js' %}"></script>
+<script src="{%static 'js/btn_index.js' %}"></script>
 
 {% endblock mainBody %}

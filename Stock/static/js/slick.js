@@ -2,7 +2,7 @@
 $('.slider').slick({
     autoplay: true,
     infinite: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 1000,
    
 });
 
