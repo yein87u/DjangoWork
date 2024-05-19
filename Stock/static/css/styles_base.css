@@ -1,5 +1,4 @@
 body{
-
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -7,46 +6,71 @@ body{
 .header{
     transition:  500ms;
     width: 100%;
+    height: 80px;
     top: 0px;
     position:sticky;
     background-color: blueviolet;
-    padding: 15px 0;
+    padding: 10px 0;
     z-index: 20;
 
 }   
 .header.transparent{
     transition:  500ms;
     background-color: rgba(255, 255, 255, 0.678);
-    border-bottom:2px solid blueviolet; 
-    padding: 15px 0;
+    border-bottom:3px solid blueviolet; 
+}
+.header .content{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+    margin: 0 auto;
+}
+
+
+.header p{
+    transition:  500ms;
+    width: 300px;
+    margin: 0;
+    font-weight: bold;
+    font-size: 40px;
+    color: white;
+    
 }
 .header.transparent p{
     color: rgb(54, 23, 82);
     transition:  500ms;
 }
-.header .content{
-
-    margin: auto;
-    width: 85%;
-    height: auto;
-    display: flex;
-    justify-content: start;
-}
-.header p{
+.header .content a {
+   
+    height: 40px;
+    text-align: center;
     transition:  500ms;
-    margin: 0;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 15px;
     color: white;
+    text-decoration: none; /* 去除底線 */
+    border-radius: 20px;
+    border: 2px solid white;
+    padding: 0 30px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.header h1{
-    margin: 0 0 0 30px;
-    color: white;
+.header.transparent a{
+    color: rgb(54, 23, 82);
+    transition:  500ms;
+    border: 2px solid rgb(54, 23, 82);
+    
 }
-.content{
-    width: 80%;
-    height: 300px;
+
+.header a:hover{
+    transform: scale(1.1);
+    transition:  500ms;
 }
+
+
 .footer{
     background-color: blueviolet;
     margin: 0 0 0 0;
