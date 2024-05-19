@@ -1,8 +1,7 @@
 from django.shortcuts import render
 from Stock.models import stock_data
-from django.http import HttpResponse
+from django.http import JsonResponse
 import twstock
-
 # Create your views here.
 
 def get(request):
@@ -39,7 +38,10 @@ def get(request):
                 },
             )
     t += 1
-    return HttpResponse("資料已成功存入資料庫")
+    data = {
+        "message": "資料已成功存入資料庫"
+    }
+    return JsonResponse(data)
 
 def home(request):
 

@@ -152,6 +152,10 @@
     font-size: 25px;
 }
 .btn_renew{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
     float: right;
     --bs-btn-bg:blueviolet ;
     --bs-btn-color: white;
